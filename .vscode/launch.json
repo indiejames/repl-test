@@ -8,6 +8,8 @@
 			"request": "launch",
 			"toolsJar": "${JAVA_HOME}/lib/tools.jar",
 			"stopOnEntry": false,
+			"replPort": 7777,
+			"debugPort": 9999,
 			"cwd": "${workspaceRoot}"
 			
 		}
