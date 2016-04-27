@@ -1,0 +1,15 @@
+(defproject repl_test "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :source-paths ["src" "resources/tools.jar"]
+  :javac-options ["-g"]
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [debug-middleware "0.1.0-SNAPSHOT"]
+                 [compliment "0.2.7"]]
+  :repl-options {:nrepl-middleware
+                 [debug-middleware.core/debug-middleware]}
+  :profiles {:repl {:debug true}
+             :dev {:debug true
+                            :dependencies [[bronsa/swank-clojure "1.5.0"]]}})

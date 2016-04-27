@@ -1,0 +1,15 @@
+{
+	"version": "0.2.0",
+  "debugServer": 4711,
+	"configurations": [
+		{
+			"name": "Clojure-Debug",
+			"type": "clojure",
+			"request": "launch",
+			"toolsJar": "${JAVA_HOME}/lib/tools.jar",
+			"stopOnEntry": false,
+			"cwd": "${workspaceRoot}"
+			
+		}
+	]
+}
