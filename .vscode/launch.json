@@ -1,6 +1,6 @@
 {
 	"version": "0.2.0",
-  "debugServer": 4711,
+    "debugServer": 4711,
 	"configurations": [
 		{
 			"name": "Clojure-Debug",
@@ -10,8 +10,8 @@
 			"stopOnEntry": false,
 			"replPort": 7777,
 			"debugPort": 9999,
-			"cwd": "${workspaceRoot}"
-			
+			"cwd": "${workspaceRoot}",
+			"refreshOnLaunch": true
 		}
 	]
 }
