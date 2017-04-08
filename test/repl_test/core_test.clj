@@ -3,9 +3,8 @@
             [repl-test.core :refer [foo]]))            
 (deftest a-test
  (testing "FIXME, I fail."
-   (is (= 0 (repl-test.core/foo 1 2)))))
-
+   (is (= 0 (foo 1 2)))))
 
 (deftest another-test
  (testing "I pass."
-   (is (= 2 (+ 1 1)))))
+   (is (= 3 (+ 1 1)))))

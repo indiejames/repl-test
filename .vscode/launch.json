@@ -1,17 +1,82 @@
 {
 	"version": "0.2.0",
-    "debugServer": 4711,
 	"configurations": [
 		{
-			"name": "Clojure-Debug",
+			"name": "Clojure-Debug Integrated Terminal",
 			"type": "clojure",
 			"request": "launch",
-			"toolsJar": "${JAVA_HOME}/lib/tools.jar",
-			"stopOnEntry": false,
+			"leinPath": "/usr/local/bin/lein",
+			"commandLine": [
+				"/usr/local/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":start",
+				":port",
+				"7777"
+			],
+			"toolsJar": "/Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/lib/tools.jar",
 			"replPort": 7777,
+			"debugReplPort": 7778,
+			"debugPort": 9999,
+			"debugServer": 4711,
+			"console": "integratedTerminal",
+			"cwd": "${workspaceRoot}",
+			"refreshOnLaunch": true,
+			"sideChannelPort": 3030
+		},
+		{
+			"name": "Clojure-Debug External Terminal",
+			"type": "clojure",
+			"request": "launch",
+			"leinPath": "/usr/local/bin/lein",
+			"commandLine": [
+				"/usr/local/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":start",
+				":port",
+				"7777"
+			],
+			"toolsJar": "/Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/lib/tools.jar",
+			"replPort": 7777,
+			"debugReplPort": 7778,
+			"debugPort": 9999,
+			"debugServer": 4711,
+			"console": "externalTerminal",
+			"cwd": "${workspaceRoot}",
+			"refreshOnLaunch": true,
+			"sideChannelPort": 3030
+		},
+		{
+			"name": "Clojure-Debug Internal Console",
+			"type": "clojure",
+			"request": "launch",
+			"commandLine": [
+				"/usr/local/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":headless",
+				":port",
+				"7777"
+			],
+			"replPort": 7777,
+			"console": "internalConsole",
+			"debugServer": 4711
+		},
+		{
+			"name": "Clojure-Attach Console",
+			"type": "clojure",
+			"request": "attach",
+			"leinPath": "/usr/local/bin/lein",
+			"toolsJar": "/Library/Java/JavaVirtualMachines/jdk1.8.0_74.jdk/Contents/Home/lib/tools.jar",
+			"replPort": 7777,
+			"debugReplPort": 7778,
 			"debugPort": 9999,
 			"cwd": "${workspaceRoot}",
-			"refreshOnLaunch": true
+			"sideChannelPort": 3030
 		}
 	]
 }
