@@ -1,0 +1,32 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "echo",
+  "isShellCommand": true,
+  "args": ["Testing repl_test/core_test.clj\nFAIL INFO core_test.clj:4\nTesting stuff"],
+  "showOutput": "always",
+  "suppressTaskName": true,
+  "problemMatcher":
+        {
+          "severity": "error",
+          "fileLocation": ["relative", "Users/jnorton/Clojure/repl_test/test"],
+          "pattern": [
+            {
+              "regexp": "^Testing (.*?)$",
+              "file": 1
+            },
+            {
+              //"regexp": "^(.*?) in \\(.*?\\)\\s+?\\((.*):(\\d+)\\)$",
+              "regexp": "^(.*?) (.*?) (.*?):(\\d+)$",
+              
+              "message": 2,
+              "line": 4
+            }
+            // {
+            //   "regexp": "^(expected: .*)$",
+            //   "message": 1
+            // }
+          ]
+        }
+}

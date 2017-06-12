@@ -1,17 +1,83 @@
 {
 	"version": "0.2.0",
-    "debugServer": 4711,
 	"configurations": [
 		{
-			"name": "Clojure-Debug",
+			"name": "Clojure-Debug Console",
 			"type": "clojure",
 			"request": "launch",
-			"toolsJar": "${JAVA_HOME}/lib/tools.jar",
-			"stopOnEntry": false,
 			"replPort": 7777,
+			"debugReplPort": 7778,
 			"debugPort": 9999,
+			"sideChannelPort": 3030,
 			"cwd": "${workspaceRoot}",
-			"refreshOnLaunch": true
+			"refreshOnLaunch": true,
+			"console": "internalConsole",
+			"parallelTestDirs": [
+				"test"
+			],
+			"sequentialTestDirs": [
+				"int_test"
+			],
+			"commandLine": [
+				"/Users/jnorton/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":start",
+				":port",
+				"7777"
+			]
+		},
+		{
+			"name": "Clojure-Debug Console - REPL",
+			"type": "clojure",
+			"request": "launch",
+			"debugServer": 4711,
+			"replPort": 7777,
+			"debug": false,
+			"sideChannelPort": 3030,
+			"cwd": "${workspaceRoot}",
+			"refreshOnLaunch": true,
+			"console": "internalConsole",
+			"parallelTestDirs": [
+				"test"
+			],
+			"sequentialTestDirs": [
+				"int_test"
+			],
+			"commandLine": [
+				"/Users/jnorton/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":start",
+				":port",
+				"7777"
+			]
+		},
+		{
+			"name": "Clojure-Debug Terminal",
+			"type": "clojure",
+			"request": "launch",
+			"toolsJar": "/Users/jnorton/workspace/deployment/tools/jdk-1.8/lib/tools.jar",
+			"leinPath": "/Users/jnorton/bin/lein",
+			"replPort": 7777,
+			"debugReplPort": 7778,
+			"debugPort": 9999,
+			"debugServer": 4711,
+			"sideChannelPort": 3030,
+			"cwd": "${workspaceRoot}",
+			"refreshOnLaunch": true,
+			"console": "integratedTerminal",
+			"commandLine": [
+				"/Users/jnorton/bin/lein",
+				"with-profile",
+				"+debug-repl",
+				"repl",
+				":start",
+				":port",
+				"7777"
+			]
 		}
 	]
 }
