@@ -4,13 +4,8 @@
             [clojure.edn :as edn]
             [clojure.string :as string]
             [clojure.test :as t :refer [report]]
-<<<<<<< HEAD
             [cheshire.core :as json]
             [debug-middleware.language-server :as lang-serv])
-=======
-            [eftest.runner :refer [find-tests run-tests]]
-            [repl-test.test])
->>>>>>> e24028332fc0ef03d19b34ee3968a5a9a2c9e4bc
   (:import [clojure.lang.Numbers]))
 
 (defn foo
@@ -21,7 +16,6 @@
     (println x "Hello, World!")
     z))
 
-<<<<<<< HEAD
 
 (comment
   (foo 4 4)
@@ -42,8 +36,6 @@
 
 (defrecord TestRecord [x y z])
 
-=======
->>>>>>> e24028332fc0ef03d19b34ee3968a5a9a2c9e4bc
 
 (defn two
   "Level two function"
@@ -62,7 +54,6 @@
     (foo 4 7) 
     (* y x)))
 
-<<<<<<< HEAD
 (defn baz
   "Test nested calls"
   [x]
@@ -73,8 +64,6 @@
   [x]
   (baz x))
 
-=======
->>>>>>> e24028332fc0ef03d19b34ee3968a5a9a2c9e4bc
 (def counter (atom 0))
 
 (defn create-thread
@@ -105,7 +94,6 @@
   (with-redefs-fn {#'hello (fn [name] (println "Goodbye, " name))}
                   #(hello "James")))
 
-<<<<<<< HEAD
 ; (defn test-test
 ;   "Test rebinding teset namespace function"
 ;   [dir]
@@ -118,19 +106,6 @@
 ;     {#'clojure.test/stacktrace-file-and-line (fn [stacktrace] {:file "foo.clj" :line 1})}
 ;     #(clojure.test/run-tests 'repl-test.core-test)))
 
-=======
-(defn test-test
-  "Test rebinding teset namespace function"
-  [dir]
-  (run-tests (find-tests dir)))
-
-(defn test-test2
-  "Test rebinding teset namespace function"
-  [dir]
-  (with-redefs-fn 
-    {#'clojure.test/stacktrace-file-and-line (fn [stacktrace] {:file "foo.clj" :line 1})}
-    #(clojure.test/run-tests 'repl-test.core-test)))
->>>>>>> e24028332fc0ef03d19b34ee3968a5a9a2c9e4bc
 
 (defn test4
  "Simply calls test"
